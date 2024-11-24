@@ -1,0 +1,46 @@
+python manage.py shell
+
+from estudiantes.models import Estudiante
+
+datos_estudiantes = [
+    {"nombre": "Juan", "apellido": "Pérez", "edad": 20, "email": "juan.perez@gmail.com"},
+    {"nombre": "Ana", "apellido": "Gómez", "edad": 22, "email": "ana.gomez@gmail.com"},
+    {"nombre": "Carlos", "apellido": "López", "edad": 21, "email": "carlos.lopez@gmail.com"},
+    {"nombre": "María", "apellido": "Martínez", "edad": 23, "email": "maria.martinez@gmail.com"},
+    {"nombre": "Luis", "apellido": "Fernández", "edad": 19, "email": "luis.fernandez@gmail.com"},
+]
+
+for dato in datos_estudiantes:
+    Estudiante.objects.create(**dato)
+
+print("Estudiantes cargados exitosamente.")
+
+from cursos.models import Curso
+
+datos_cursos = [
+    {"nombre": "Matemáticas", "descripcion": "Curso avanzado de matemáticas.", "duracion": 120},
+    {"nombre": "Historia", "descripcion": "Estudio de las civilizaciones antiguas.", "duracion": 90},
+    {"nombre": "Programación", "descripcion": "Introducción a la programación en Python.", "duracion": 150},
+    {"nombre": "Inglés", "descripcion": "Curso intensivo de inglés intermedio.", "duracion": 100},
+    {"nombre": "Ciencias", "descripcion": "Curso de biología y química básica.", "duracion": 80},
+]
+
+for dato in datos_cursos:
+    Curso.objects.create(**dato)
+
+print("Cursos cargados exitosamente.")
+
+from reportes.models import Reporte
+
+datos_reportes = [
+    {"titulo": "Reporte de Estudiantes", "contenido": "Este es un reporte detallado de estudiantes."},
+    {"titulo": "Progreso de Cursos", "contenido": "Reporte sobre el progreso en los cursos actuales."},
+    {"titulo": "Evaluación Mensual", "contenido": "Resumen de evaluaciones realizadas en el último mes."},
+    {"titulo": "Reporte Anual", "contenido": "Resumen anual de todas las actividades realizadas."},
+    {"titulo": "Estadísticas Generales", "contenido": "Estadísticas generales de la plataforma educativa."},
+]
+
+for dato in datos_reportes:
+    Reporte.objects.create(**dato)
+
+print("Reportes cargados exitosamente.")

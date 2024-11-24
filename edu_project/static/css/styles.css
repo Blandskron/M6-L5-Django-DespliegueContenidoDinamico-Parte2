@@ -1,0 +1,22 @@
+/* Archivo: static/css/style.css */
+.nav-link {
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+main.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
